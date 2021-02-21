@@ -5,7 +5,7 @@ plugins {
 
 group 'id.smkn4.pbo.restaurantCashier'
 version '0.1-DEVELOPMENT'
-mainClassName = 'id.smkn4.pbo.restaurantCashier.Main'
+mainClassName = 'id.smkn4.pbo.restaurantCashier.main.MainAplikasiKasir'
 
 repositories {
     mavenCentral()
