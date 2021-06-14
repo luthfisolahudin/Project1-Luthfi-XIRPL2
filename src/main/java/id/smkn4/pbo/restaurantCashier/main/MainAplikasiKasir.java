@@ -87,6 +87,39 @@ public class MainAplikasiKasir {
             pesanLagi = in.next();
 
         } while (pesanLagi.equalsIgnoreCase("Y"));
+
+        transaksi.cetakStruk();
+
+        double totalPesanan = transaksi.hitungTotalPesanan();
+        System.out.println("============================");
+        System.out.println("Total: \t\t" + totalPesanan);
+
+        transaksi.setPajak(PAJAK_PPN);
+        double ppn = transaksi.hitungPajak();
+        System.out.println("Pajak 10%: \t\t" + ppn);
+
+        double biayaService = 0;
+        if (makanDiTempat.equalsIgnoreCase("Y")) {
+            transaksi.setBiayaService(BIAYA_PELAYANAN);
+            biayaService = transaksi.hitungBiayaService();
+            System.out.println("Biaya Service 5%: \t" + biayaService);
+        }
+
+        System.out.println("Total: \t\t" + transaksi.hitungTotalBayar(ppn, biayaService));
+
+        double kembalian;
+        do {
+            double uangBayar = app.cekInputNumber("Uang Bayar: \t\t");
+
+            kembalian = transaksi.hitungKembalian(uangBayar);
+
+            if (kembalian < 0) {
+                System.out.println("[Err] Uang Anda kurang");
+                continue;
+            }
+
+            System.out.println("Kembalian \t\t" + kembalian);
+        } while (kembalian < 0);
     }
 
     public void generateDaftarMenu() {
