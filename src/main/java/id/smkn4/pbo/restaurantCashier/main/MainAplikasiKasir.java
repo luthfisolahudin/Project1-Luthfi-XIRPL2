@@ -8,8 +8,8 @@ import java.util.Scanner;
 public class MainAplikasiKasir {
     public DaftarMenu daftarMenu;
 
-    public static double PAJAK_PPN = 10d/100d;
-    public static double BIAYA_PELAYANAN = 5d/100d;
+    public static double PAJAK_PPN = 10d / 100d;
+    public static double BIAYA_PELAYANAN = 5d / 100d;
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -17,6 +17,21 @@ public class MainAplikasiKasir {
         MainAplikasiKasir app = new MainAplikasiKasir();
 
         app.generateDaftarMenu();
+
+        System.out.println("======== TRANSAKSI ========");
+        System.out.println("No transaksi: ");
+        noTransaksi = in.next();
+        System.out.println("Pemesan: ");
+        namaPemesan = in.next();
+        System.out.println("Tanggal: [dd-mm-yyyy] ");
+        tanggal = in.next();
+        System.out.println("Makan ditempat? [y/N] ");
+        makanDiTempat = in.next();
+
+        if (makanDiTempat.equalsIgnoreCase("Y")) {
+            System.out.println("Nomor Meja : ");
+            noMeja = in.next();
+        }
     }
 
     public void generateDaftarMenu() {
