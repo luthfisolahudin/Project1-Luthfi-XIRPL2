@@ -8,8 +8,12 @@ import java.util.Scanner;
 public class MainAplikasiKasir {
     public DaftarMenu daftarMenu;
 
+    public static double PAJAK_PPN = 10d/100d;
+    public static double BIAYA_PELAYANAN = 5d/100d;
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
+        String noTransaksi, namaPemesan, tanggal, noMeja, transaksiLagi, pesanLagi, keterangan, makanDiTempat;
         MainAplikasiKasir app = new MainAplikasiKasir();
 
         app.generateDaftarMenu();
